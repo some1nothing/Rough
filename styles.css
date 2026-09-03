@@ -1,0 +1,218 @@
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Every full-screen section snaps into place */
+section {
+    position: relative;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Dark layer over the photographs */
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.75),
+        transparent
+    );
+    padding: 20px 35px;
+    z-index: 10;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+
+/* Text */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    padding: 30px;
+}
+
+.subtitle {
+    font-size: 13px;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(55px, 9vw, 130px);
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.description {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+
+/* Buttons */
+.explore-button {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.explore-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* Section numbers */
+.number {
+    position: absolute;
+    right: 40px;
+    bottom: 35px;
+    z-index: 2;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+
+/* Background photographs */
+
+.history {
+    background-image: url("images/history.jpg");
+}
+
+.bmw {
+    background-image: url("images/bmw.jpg");
+}
+
+.mercedes {
+    background-image: url("images/mercedes.jpg");
+}
+
+.audi {
+    background-image: url("images/audi.jpg");
+}
+
+.astonmartin {
+    background-image: url("images/astonmartin.jpg");
+}
+
+.bentley {
+    background-image: url("images/bentley.jpg");
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar-nav {
+        display: none !important;
+    }
+
+    .navbar {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .number {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+.nav-link.active {
+    border-bottom: 1px solid white;
+}
+
+/*Each Brand Car*/
+.brand-page {
+    min-height: 100vh;
+    background: #080808;
+}
+
+.brand-header {
+    height: 70vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.brand-header .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.brand-card {
+    height: 100%;
+    padding: 35px;
+    border: 1px solid #333;
+    background: #111;
+    transition: 0.3s;
+}
+
+.brand-card:hover {
+    transform: translateY(-5px);
+    border-color: #777;
+}
+
+.brand-card h3 {
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.brand-card p {
+    color: #aaa;
+    line-height: 1.7;
+}
